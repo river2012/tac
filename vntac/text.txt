@@ -1,0 +1,27 @@
+///信息分发
+struct CThostFtdcDisseminationField
+{
+	///序列系列号
+	TThostFtdcSequenceSeriesType	SequenceSeries;
+	///序列号
+	TThostFtdcSequenceNoType	SequenceNo;
+};
+
+///用户登录请求
+struct CThostFtdcReqUserLoginField
+{
+	///交易日
+	TThostFtdcDateType	TradingDay;
+	///经纪公司代码
+	TThostFtdcBrokerIDType	BrokerID;
+	///用户代码
+	TThostFtdcUserIDType	UserID;
+	///密码
+	TThostFtdcPasswordType	Password;
+	///用户端产品信息
+	TThostFtdcProductInfoType	UserProductInfo;
+	///接口端产品信息
+	TThostFtdcProductInfoType	InterfaceProductInfo;
+	///协议信息
+	TThostFtdcProtocolInfoType	ProtocolInfo;
+};
