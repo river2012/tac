@@ -1,9 +1,8 @@
-﻿  Cleaning remote project directory
-  Validating sources
+﻿  Validating sources
   Copying sources remotely to '47.91.228.44'
   Validating architecture
   Starting remote build
   Compiling sources:
   main.cpp
   Linking objects
-  vntactd.vcxproj -> D:\GitHub\tac\vntac\vntactd\bin\x64\Debug\vntactd.out
+  vntactd.vcxproj -> D:\GitHub\tac\vntac\vntactd\bin\x64\Debug\libvntactd.so
