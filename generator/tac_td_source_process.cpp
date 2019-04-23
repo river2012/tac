@@ -13,13 +13,13 @@ void TdApi::processFrontDisconnected(Task *task)
 void TdApi::processRspError(Task *task)
 {
 	gil_scoped_acquire acquire;
-	dict data;
-	if (task->task_data)
+	dict error;
+	if (task->task_error)
 	{
-		CTacFtdcRspInfoField *task_data = (CTacFtdcRspInfoField*)task->task_data;
-		delete task->task_data;
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		delete task->task_error;
 	}
-	this->onRspError(data, task->task_id, task->task_last);
+	this->onRspError(error, task->task_id, task->task_last);
 };
 
 void TdApi::processRspUserLogin(Task *task)
@@ -31,13 +31,13 @@ void TdApi::processRspUserLogin(Task *task)
 		CTacFtdcRspUserLoginField *task_data = (CTacFtdcRspUserLoginField*)task->task_data;
 		delete task->task_data;
 	}
-	dict data;
-	if (task->task_data)
+	dict error;
+	if (task->task_error)
 	{
-		CTacFtdcRspInfoField *task_data = (CTacFtdcRspInfoField*)task->task_data;
-		delete task->task_data;
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		delete task->task_error;
 	}
-	this->onRspUserLogin(data, data, task->task_id, task->task_last);
+	this->onRspUserLogin(data, error, task->task_id, task->task_last);
 };
 
 void TdApi::processRspUserLogout(Task *task)
@@ -49,13 +49,13 @@ void TdApi::processRspUserLogout(Task *task)
 		CTacFtdcUserLogoutField *task_data = (CTacFtdcUserLogoutField*)task->task_data;
 		delete task->task_data;
 	}
-	dict data;
-	if (task->task_data)
+	dict error;
+	if (task->task_error)
 	{
-		CTacFtdcRspInfoField *task_data = (CTacFtdcRspInfoField*)task->task_data;
-		delete task->task_data;
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		delete task->task_error;
 	}
-	this->onRspUserLogout(data, data, task->task_id, task->task_last);
+	this->onRspUserLogout(data, error, task->task_id, task->task_last);
 };
 
 void TdApi::processRspOrderInsert(Task *task)
@@ -67,13 +67,13 @@ void TdApi::processRspOrderInsert(Task *task)
 		CTacFtdcRspOrderInsertField *task_data = (CTacFtdcRspOrderInsertField*)task->task_data;
 		delete task->task_data;
 	}
-	dict data;
-	if (task->task_data)
+	dict error;
+	if (task->task_error)
 	{
-		CTacFtdcRspInfoField *task_data = (CTacFtdcRspInfoField*)task->task_data;
-		delete task->task_data;
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		delete task->task_error;
 	}
-	this->onRspOrderInsert(data, data, task->task_id, task->task_last);
+	this->onRspOrderInsert(data, error, task->task_id, task->task_last);
 };
 
 void TdApi::processRspOrderAction(Task *task)
@@ -85,13 +85,13 @@ void TdApi::processRspOrderAction(Task *task)
 		CTacFtdcRspOrderActionField *task_data = (CTacFtdcRspOrderActionField*)task->task_data;
 		delete task->task_data;
 	}
-	dict data;
-	if (task->task_data)
+	dict error;
+	if (task->task_error)
 	{
-		CTacFtdcRspInfoField *task_data = (CTacFtdcRspInfoField*)task->task_data;
-		delete task->task_data;
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		delete task->task_error;
 	}
-	this->onRspOrderAction(data, data, task->task_id, task->task_last);
+	this->onRspOrderAction(data, error, task->task_id, task->task_last);
 };
 
 void TdApi::processRtnOrder(Task *task)
@@ -127,13 +127,13 @@ void TdApi::processRspQryInstrument(Task *task)
 		CTacFtdcInstrumentField *task_data = (CTacFtdcInstrumentField*)task->task_data;
 		delete task->task_data;
 	}
-	dict data;
-	if (task->task_data)
+	dict error;
+	if (task->task_error)
 	{
-		CTacFtdcRspInfoField *task_data = (CTacFtdcRspInfoField*)task->task_data;
-		delete task->task_data;
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		delete task->task_error;
 	}
-	this->onRspQryInstrument(data, data, task->task_id, task->task_last);
+	this->onRspQryInstrument(data, error, task->task_id, task->task_last);
 };
 
 void TdApi::processRspQryAccount(Task *task)
@@ -145,13 +145,13 @@ void TdApi::processRspQryAccount(Task *task)
 		CTacFtdcAccountField *task_data = (CTacFtdcAccountField*)task->task_data;
 		delete task->task_data;
 	}
-	dict data;
-	if (task->task_data)
+	dict error;
+	if (task->task_error)
 	{
-		CTacFtdcRspInfoField *task_data = (CTacFtdcRspInfoField*)task->task_data;
-		delete task->task_data;
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		delete task->task_error;
 	}
-	this->onRspQryAccount(data, data, task->task_id, task->task_last);
+	this->onRspQryAccount(data, error, task->task_id, task->task_last);
 };
 
 void TdApi::processRspQryPosition(Task *task)
@@ -163,12 +163,12 @@ void TdApi::processRspQryPosition(Task *task)
 		CTacFtdcPositionField *task_data = (CTacFtdcPositionField*)task->task_data;
 		delete task->task_data;
 	}
-	dict data;
-	if (task->task_data)
+	dict error;
+	if (task->task_error)
 	{
-		CTacFtdcRspInfoField *task_data = (CTacFtdcRspInfoField*)task->task_data;
-		delete task->task_data;
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		delete task->task_error;
 	}
-	this->onRspQryPosition(data, data, task->task_id, task->task_last);
+	this->onRspQryPosition(data, error, task->task_id, task->task_last);
 };
 

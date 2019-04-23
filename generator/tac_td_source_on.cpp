@@ -22,11 +22,11 @@ void onFrontDisconnected(int reqid) override
 	}
 };
 
-void onRspError(const dict &data, int reqid, bool last) override
+void onRspError(const dict &error, int reqid, bool last) override
 {
 	try
 	{
-		PYBIND11_OVERLOAD(void, TdApi, onRspError, data, reqid, last);
+		PYBIND11_OVERLOAD(void, TdApi, onRspError, error, reqid, last);
 	}
 	catch (const error_already_set &e)
 	{
@@ -34,11 +34,11 @@ void onRspError(const dict &data, int reqid, bool last) override
 	}
 };
 
-void onRspUserLogin(const dict &data, const dict &data, int reqid, bool last) override
+void onRspUserLogin(const dict &data, const dict &error, int reqid, bool last) override
 {
 	try
 	{
-		PYBIND11_OVERLOAD(void, TdApi, onRspUserLogin, data, data, reqid, last);
+		PYBIND11_OVERLOAD(void, TdApi, onRspUserLogin, data, error, reqid, last);
 	}
 	catch (const error_already_set &e)
 	{
@@ -46,11 +46,11 @@ void onRspUserLogin(const dict &data, const dict &data, int reqid, bool last) ov
 	}
 };
 
-void onRspUserLogout(const dict &data, const dict &data, int reqid, bool last) override
+void onRspUserLogout(const dict &data, const dict &error, int reqid, bool last) override
 {
 	try
 	{
-		PYBIND11_OVERLOAD(void, TdApi, onRspUserLogout, data, data, reqid, last);
+		PYBIND11_OVERLOAD(void, TdApi, onRspUserLogout, data, error, reqid, last);
 	}
 	catch (const error_already_set &e)
 	{
@@ -58,11 +58,11 @@ void onRspUserLogout(const dict &data, const dict &data, int reqid, bool last) o
 	}
 };
 
-void onRspOrderInsert(const dict &data, const dict &data, int reqid, bool last) override
+void onRspOrderInsert(const dict &data, const dict &error, int reqid, bool last) override
 {
 	try
 	{
-		PYBIND11_OVERLOAD(void, TdApi, onRspOrderInsert, data, data, reqid, last);
+		PYBIND11_OVERLOAD(void, TdApi, onRspOrderInsert, data, error, reqid, last);
 	}
 	catch (const error_already_set &e)
 	{
@@ -70,11 +70,11 @@ void onRspOrderInsert(const dict &data, const dict &data, int reqid, bool last) 
 	}
 };
 
-void onRspOrderAction(const dict &data, const dict &data, int reqid, bool last) override
+void onRspOrderAction(const dict &data, const dict &error, int reqid, bool last) override
 {
 	try
 	{
-		PYBIND11_OVERLOAD(void, TdApi, onRspOrderAction, data, data, reqid, last);
+		PYBIND11_OVERLOAD(void, TdApi, onRspOrderAction, data, error, reqid, last);
 	}
 	catch (const error_already_set &e)
 	{
@@ -106,11 +106,11 @@ void onRtnTrade(const dict &data) override
 	}
 };
 
-void onRspQryInstrument(const dict &data, const dict &data, int reqid, bool last) override
+void onRspQryInstrument(const dict &data, const dict &error, int reqid, bool last) override
 {
 	try
 	{
-		PYBIND11_OVERLOAD(void, TdApi, onRspQryInstrument, data, data, reqid, last);
+		PYBIND11_OVERLOAD(void, TdApi, onRspQryInstrument, data, error, reqid, last);
 	}
 	catch (const error_already_set &e)
 	{
@@ -118,11 +118,11 @@ void onRspQryInstrument(const dict &data, const dict &data, int reqid, bool last
 	}
 };
 
-void onRspQryAccount(const dict &data, const dict &data, int reqid, bool last) override
+void onRspQryAccount(const dict &data, const dict &error, int reqid, bool last) override
 {
 	try
 	{
-		PYBIND11_OVERLOAD(void, TdApi, onRspQryAccount, data, data, reqid, last);
+		PYBIND11_OVERLOAD(void, TdApi, onRspQryAccount, data, error, reqid, last);
 	}
 	catch (const error_already_set &e)
 	{
@@ -130,11 +130,11 @@ void onRspQryAccount(const dict &data, const dict &data, int reqid, bool last) o
 	}
 };
 
-void onRspQryPosition(const dict &data, const dict &data, int reqid, bool last) override
+void onRspQryPosition(const dict &data, const dict &error, int reqid, bool last) override
 {
 	try
 	{
-		PYBIND11_OVERLOAD(void, TdApi, onRspQryPosition, data, data, reqid, last);
+		PYBIND11_OVERLOAD(void, TdApi, onRspQryPosition, data, error, reqid, last);
 	}
 	catch (const error_already_set &e)
 	{

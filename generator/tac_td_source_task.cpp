@@ -19,9 +19,9 @@
 	task.task_name = ONRSPERROR;
 	if (pRspInfo)
 	{
-		CTacFtdcRspInfoField *task_data = new CTacFtdcRspInfoField();
-		*task_data = *pRspInfo;
-		task.task_data = task_data;
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
 	}
 	task.task_id = nRequestID;
 	task.task_last = bIsLast;
@@ -40,9 +40,9 @@
 	}
 	if (pRspInfo)
 	{
-		CTacFtdcRspInfoField *task_data = new CTacFtdcRspInfoField();
-		*task_data = *pRspInfo;
-		task.task_data = task_data;
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
 	}
 	task.task_id = nRequestID;
 	task.task_last = bIsLast;
@@ -61,9 +61,9 @@
 	}
 	if (pRspInfo)
 	{
-		CTacFtdcRspInfoField *task_data = new CTacFtdcRspInfoField();
-		*task_data = *pRspInfo;
-		task.task_data = task_data;
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
 	}
 	task.task_id = nRequestID;
 	task.task_last = bIsLast;
@@ -82,9 +82,9 @@
 	}
 	if (pRspInfo)
 	{
-		CTacFtdcRspInfoField *task_data = new CTacFtdcRspInfoField();
-		*task_data = *pRspInfo;
-		task.task_data = task_data;
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
 	}
 	task.task_id = nRequestID;
 	task.task_last = bIsLast;
@@ -103,9 +103,9 @@
 	}
 	if (pRspInfo)
 	{
-		CTacFtdcRspInfoField *task_data = new CTacFtdcRspInfoField();
-		*task_data = *pRspInfo;
-		task.task_data = task_data;
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
 	}
 	task.task_id = nRequestID;
 	task.task_last = bIsLast;
@@ -150,9 +150,9 @@
 	}
 	if (pRspInfo)
 	{
-		CTacFtdcRspInfoField *task_data = new CTacFtdcRspInfoField();
-		*task_data = *pRspInfo;
-		task.task_data = task_data;
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
 	}
 	task.task_id = nRequestID;
 	task.task_last = bIsLast;
@@ -171,9 +171,9 @@
 	}
 	if (pRspInfo)
 	{
-		CTacFtdcRspInfoField *task_data = new CTacFtdcRspInfoField();
-		*task_data = *pRspInfo;
-		task.task_data = task_data;
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
 	}
 	task.task_id = nRequestID;
 	task.task_last = bIsLast;
@@ -192,9 +192,9 @@
 	}
 	if (pRspInfo)
 	{
-		CTacFtdcRspInfoField *task_data = new CTacFtdcRspInfoField();
-		*task_data = *pRspInfo;
-		task.task_data = task_data;
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
 	}
 	task.task_id = nRequestID;
 	task.task_last = bIsLast;
