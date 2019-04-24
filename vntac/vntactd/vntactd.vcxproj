@@ -75,6 +75,9 @@
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>D:\GitHub\tac\include;C:\Users\river\AppData\Local\Microsoft\Linux\HeaderCache\1.0\-917739659\usr\include\c++\4.8.5\bits;D:\GitHub\tac\vntac;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -83,7 +86,9 @@
     <ClInclude Include="..\..\include\tac\TacFtdcTraderApi.h" />
     <ClInclude Include="..\..\include\tac\TacFtdcUserApiDataType.h" />
     <ClInclude Include="..\..\include\tac\TacFtdcUserApiStruct.h" />
+    <ClInclude Include="..\vntac.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="vntactd.h" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
