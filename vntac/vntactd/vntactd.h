@@ -1,7 +1,7 @@
 //ϵͳ
-//#ifdef WIN32
-//#include "stdafx.h"
-//#endif
+#ifdef WIN32
+#include "stdafx.h"
+#endif
 
 #include "vntac.h"
 #include "pybind11/pybind11.h"

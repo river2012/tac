@@ -614,7 +614,10 @@ string TdApi::getTradingDay()
 	string day = this->api->GetTradingDay();
 	return day;
 };
-
+void TdApi::registerFront(string pszFrontAddress)
+{
+	this->api->RegisterFront((char*)pszFrontAddress.c_str());
+};
 int TdApi::reqUserLogin(const dict &req, int reqid)
 {
 	CTacFtdcUserLoginField myreq = CTacFtdcUserLoginField();
@@ -885,5 +888,7 @@ PYBIND11_MODULE(vntactd, m)
 		.def("onRspQryAccount", &TdApi::onRspQryAccount)
 		.def("onRspQryPosition", &TdApi::onRspQryPosition)
 		;
-};
+		;
+		;
+}
 

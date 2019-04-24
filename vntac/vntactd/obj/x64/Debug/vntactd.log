@@ -3,6 +3,6 @@
   Validating architecture
   Starting remote build
   Compiling sources:
-  main.cpp
+  vntactd.cpp
   Linking objects
   vntactd.vcxproj -> D:\GitHub\tac\vntac\vntactd\bin\x64\Debug\libvntactd.so

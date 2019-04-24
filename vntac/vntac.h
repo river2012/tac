@@ -1,13 +1,16 @@
+#include <stdint.h>
+
 #include <string>
 #include <queue>
 #include <thread>
 #include <mutex>
 #include <iostream>
-#include <codecvt.h>
+#include <codecvt>
 #include <condition_variable>
 #include <locale>
 
 #include "pybind11/pybind11.h"
+#include "pybind11/pytypes.h"
 
 
 using namespace std;
@@ -80,6 +83,16 @@ void getInt(const dict &d, const char *key, int *value)
 };
 
 
+//从字典中获取某个建值对应的整数，并赋值到请求结构体对象的值上
+void getUint64_t(const dict &d, const char *key, uint64_t *value)
+{
+	if (d.contains(key))					//检查字典中是否存在该键值
+	{ 
+		object o = d[key];					//获取该键值
+		*value = o.cast<uint64_t>();
+	}
+};
+
 //从字典中获取某个建值对应的浮点数，并赋值到请求结构体对象的值上
 void getDouble(const dict &d, const char *key, double *value)
 {
@@ -107,7 +120,7 @@ using string_literal = char[size];
 
 //从字典中获取某个键值对应的字符串，并赋值到强求结构体对象的值上
 template <size_t size>
-void getString(const pybind11::dict_iterator &d, const char *key, string_literal<size> &value)
+void getString(const dict &d, const char *key, string_literal<size> &value)
 {
 	if (d.contains(key))
 	{
@@ -138,7 +151,7 @@ inline string toUtf(const string &gb2312)
 
 	if (codecvt_base::ok == res)
 	{
-		wstring_convert<codecvt_utf8<wchar_t>> cutf8;
+		std::wstring_convert<std::codecvt_utf8<wchar_t>> cutf8;
 		return cutf8.to_bytes(wstring(wstr.data(), wstrEnd));
 	}
 
