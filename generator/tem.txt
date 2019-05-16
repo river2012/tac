@@ -80,4 +80,16 @@ data["BidVolume8"] = task_data->BidVolume8;
 data["BidPrice9"] = task_data->BidPrice9;
 data["BidVolume9"] = task_data->BidVolume9;
 data["BidPrice10"] = task_data->BidPrice10;
-data["BidVolume10;"] = task_data->BidVolume10;;
+data["BidVolume10;"] = task_data->BidVolume10;
+
+
+getChar(req,"LocalIP",myreq.LocalIP);
+getChar(req,"LoginServerIP",myreq.LoginServerIP);
+getUint16_t(req,"LoginServerPort",myreq.LoginServerPort);
+getChar(req,"UserName",myreq.UserName);
+getChar(req,"Password",myreq.Password);
+getLevel1callback(req,"L1Callback",myreq.L1Callback);
+getLevel2callback(req,"L2Callback",myreq.L2Callback);
+getMblcallback(req,"MblCallback",myreq.MblCallback);
+getTacfeedapiselectmode(req,"ApiSelectMode",myreq.ApiSelectMode);
+getTacfeedflag(req,"Flag",myreq.Flag);
