@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="vntacmd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{ac66ae7e-feb3-4121-b252-1badbefd7a9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\pybind11">
+      <UniqueIdentifier>{e91e8928-b1a6-4f4c-b254-d31a7f31873d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{32d77dbe-df96-4972-9026-4db021b224a8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\vntac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\detail\class.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\detail\common.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\detail\descr.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\detail\init.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\detail\internals.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\detail\typeid.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\attr.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\buffer_info.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\cast.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\chrono.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\common.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\complex.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\eigen.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\embed.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\eval.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\functional.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\iostream.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\numpy.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\operators.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\options.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\pybind11.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\pytypes.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\stl.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pybind11\stl_bind.h">
+      <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\tac\tacfeedmd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\tac\TacFtdcTraderApi.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\tac\TacFtdcUserApiDataType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\tac\TacFtdcUserApiStruct.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vntacmd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\lib\libtacfeedmd.so">
+      <Filter>资源文件</Filter>
+    </Library>
+    <Library Include="..\..\lib\libtactraderapi.so">
+      <Filter>资源文件</Filter>
+    </Library>
+  </ItemGroup>
+</Project>

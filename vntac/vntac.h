@@ -93,6 +93,17 @@ void getUint64_t(const dict &d, const char *key, uint64_t *value)
 	}
 };
 
+//从字典中获取某个建值对应的整数，并赋值到请求结构体对象的值上
+void getUint16_t(const dict &d, const char *key, uint16_t *value)    
+{
+	if (d.contains(key))					//检查字典中是否存在该键值
+	{
+		object o = d[key];					//获取该键值
+		*value = o.cast<uint16_t>();
+	}
+};
+
+
 //从字典中获取某个建值对应的浮点数，并赋值到请求结构体对象的值上
 void getDouble(const dict &d, const char *key, double *value)
 {
@@ -113,6 +124,19 @@ void getChar(const dict &d, const char *key, char *value)
 		*value = o.cast<char>();
 	}
 };
+
+//从字典中获取某个建值对应的字符，并赋值到请求结构体对象的值上
+//void getPointer(const dict &d, const char *key, uintptr_t *value)
+void getPointer(const dict &d, const char *key,const char **value)
+{
+	if (d.contains(key))					//检查字典中是否存在该键值
+	{
+		object o = d[key];					//获取该键值
+		//value = o.cast<uintptr_t>();
+		*value = o.cast<const char *>();
+	}
+};
+
 
 
 template <size_t size>
