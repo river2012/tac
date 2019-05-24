@@ -12,10 +12,10 @@ using namespace pybind11;
 using namespace std;
 
 //常量
-#define __TACFEED_MD_H__ 0 
-#define LEVEL1CALLBACK 1
-#define LEVEL2CALLBACK 2
-#define MBLCALLBACK 3
+//#define __TACFEED_MD_H__ 0 
+constexpr auto LEVEL1CALLBACK = 1;
+constexpr auto LEVEL2CALLBACK = 2;
+constexpr auto MBLCALLBACK = 3;
 
 
 ///-----------------------------------------------------------------------------------------------------------------
@@ -33,13 +33,13 @@ public:
 	MdApi()
 	{
 	};
-	//~MdApi()
-	//{
-	//	if (this->active)
-	//	{
-	//		this->exit();
-	//	}
-	//};
+	~MdApi()
+	{
+		if (this->active)
+		{
+			;/* this->exit();*/
+		}
+	};
 
 	///-----------------------------------------------------------------------------------------------------------------
 	///C++ API回调函数
