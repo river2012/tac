@@ -4,97 +4,25 @@
   Starting remote build
   Compiling sources:
   vntacmd.cpp
-D:\GitHub\tac\vntac\vntacmd\vntacmd.h(15): warning : "__TACFEED_MD_H__" redefined
-D:\GitHub\tac\vntac\vntacmd\vntacmd.h(15): warning :  #define __TACFEED_MD_H__ 0
-D:\GitHub\tac\include\tac\tacfeedmd.h(10): message : this is the location of the previous definition
-D:\GitHub\tac\include\tac\tacfeedmd.h(10): message :  #define __TACFEED_MD_H__
-D:\GitHub\tac\vntac\vntacmd\..\vntactd\vntac.h(110,32): error : ‘dict_iterator’ in namespace ‘pybind11’ does not name a type
-D:\GitHub\tac\vntac\vntacmd\..\vntactd\vntac.h(110,22): message : suggested alternative: ‘make_iterator’
-D:\GitHub\tac\vntac\vntacmd\..\vntactd\vntac.h(112,8): error : request for member ‘contains’ in ‘d’, which is of non-class type ‘const int’
-D:\GitHub\tac\vntac\vntacmd\..\vntactd\vntac.h(112,8): error :   if (d.contains(key))
-D:\GitHub\tac\vntac\vntacmd\..\vntactd\vntac.h(112,8): error :         ^~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(104,16): warning : deleting ‘void*’ is undefined [-Wdelete-incomplete]
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(104,16): warning :    delete task->task_data;
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(104,16): warning :                 ^~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(145,16): warning : deleting ‘void*’ is undefined [-Wdelete-incomplete]
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(145,16): warning :    delete task->task_data;
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(145,16): warning :                 ^~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(200,16): warning : deleting ‘void*’ is undefined [-Wdelete-incomplete]
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(200,16): warning :    delete task->task_data;
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(200,16): warning :                 ^~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(232,33): warning : ‘void* memset(void*, int, size_t)’ clearing an object of type ‘TacFeedInitParam’ {aka ‘struct TacFeedInitParam’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(232,33): warning :   memset(&myreq, 0, sizeof(myreq));
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(232,33): warning :                                  ^
+D:\GitHub\tac\include\pybind11\detail\common.h(680,83): warning : inline declaration of ‘void pybind11::pybind11_fail(const string&)’ follows declaration with attribute ‘noinline’ [-Wattributes]
+D:\GitHub\tac\include\pybind11\detail\common.h(679,44): message : previous definition of ‘void pybind11::pybind11_fail(const char*)’ was here
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(108,16): warning : deleting ‘void*’ is undefined [-Wdelete-incomplete]
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(108,16): warning :    delete task->task_data;
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(108,16): warning :                 ^~~~~~~~~
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(150,16): warning : deleting ‘void*’ is undefined [-Wdelete-incomplete]
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(150,16): warning :    delete task->task_data;
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(150,16): warning :                 ^~~~~~~~~
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(205,16): warning : deleting ‘void*’ is undefined [-Wdelete-incomplete]
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(205,16): warning :    delete task->task_data;
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(205,16): warning :                 ^~~~~~~~~
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(239,33): warning : ‘void* memset(void*, int, size_t)’ clearing an object of type ‘TacFeedInitParam’ {aka ‘struct TacFeedInitParam’} with no trivial copy-assignment; use assignment or value-initialization instead [-Wclass-memaccess]
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(239,33): warning :   memset(&myreq, 0, sizeof(myreq));
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(239,33): warning :                                  ^
 D:\GitHub\tac\include\tac\tacfeedmd.h(135,16): message : ‘TacFeedInitParam’ {aka ‘struct TacFeedInitParam’} declared here
 D:\GitHub\tac\include\tac\tacfeedmd.h(135,16): message :  typedef struct TacFeedInitParam
 D:\GitHub\tac\include\tac\tacfeedmd.h(135,16): message :                 ^~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(233,2): error : ‘getPointer’ was not declared in this scope
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(233,2): error :   getPointer(req, "LocalIP", &myreq.LocalIP);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(233,2): error :   ^~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(233,2): message : suggested alternative: ‘getter’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(233,2): message :   getPointer(req, "LocalIP", &myreq.LocalIP);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(233,2): message :   ^~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(233,2): message :   getter
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(235,2): error : ‘getUint16_t’ was not declared in this scope
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(235,2): error :   getUint16_t(req, "LoginServerPort", &myreq.LoginServerPort);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(235,2): error :   ^~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(235,2): message : suggested alternative: ‘u_int16_t’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(235,2): message :   getUint16_t(req, "LoginServerPort", &myreq.LoginServerPort);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(235,2): message :   ^~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(235,2): message :   u_int16_t
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(244,39): error : no matching function for call to ‘MdApi::TacFeedSubscribe(TacFeedInitParam*)’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(244,39): error :   int i = this->TacFeedSubscribe(&myreq);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(244,39): error :                                        ^
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(229,5): message : candidate: ‘int MdApi::TacFeedSubscribe(const pybind11::dict&)’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(229,5): message : no known conversion for argument 1 from ‘TacFeedInitParam*’ to ‘const pybind11::dict&’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(252,1): warning : no return statement in function returning non-void [-Wreturn-type]
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(252,1): warning :  };
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(252,1): warning :  ^
-D:\GitHub\tac\include\pybind11\pybind11.h(2076,33): error : no matching function for call to ‘PyMdApi::Level1Callback(const pybind11::dict&)’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message : in expansion of macro ‘PYBIND11_OVERLOAD_NAME’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      PYBIND11_OVERLOAD_NAME(PYBIND11_TYPE(ret_type), PYBIND11_TYPE(cname), #fn, fn, __VA_ARGS__)
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      ^~~~~~~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(265,4): message : in expansion of macro ‘PYBIND11_OVERLOAD’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(265,4): message :     PYBIND11_OVERLOAD(void, MdApi, Level1Callback,data);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(265,4): message :     ^~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(7,6): message : candidate: ‘void MdApi::Level1Callback(Level1QuoteDataT*)’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(7,6): message : no known conversion for argument 1 from ‘const pybind11::dict’ to ‘Level1QuoteDataT*’
-D:\GitHub\tac\include\pybind11\pybind11.h(2076,33): error : return-statement with a value, in function returning ‘void’ [-fpermissive]
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message : in expansion of macro ‘PYBIND11_OVERLOAD_NAME’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      PYBIND11_OVERLOAD_NAME(PYBIND11_TYPE(ret_type), PYBIND11_TYPE(cname), #fn, fn, __VA_ARGS__)
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      ^~~~~~~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(265,4): message : in expansion of macro ‘PYBIND11_OVERLOAD’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(265,4): message :     PYBIND11_OVERLOAD(void, MdApi, Level1Callback,data);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(265,4): message :     ^~~~~~~~~~~~~~~~~
-D:\GitHub\tac\include\pybind11\pybind11.h(2076,33): error : no matching function for call to ‘PyMdApi::Level2Callback(const pybind11::dict&)’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message : in expansion of macro ‘PYBIND11_OVERLOAD_NAME’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      PYBIND11_OVERLOAD_NAME(PYBIND11_TYPE(ret_type), PYBIND11_TYPE(cname), #fn, fn, __VA_ARGS__)
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      ^~~~~~~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(276,4): message : in expansion of macro ‘PYBIND11_OVERLOAD’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(276,4): message :     PYBIND11_OVERLOAD(void, MdApi, Level2Callback, data);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(276,4): message :     ^~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(20,6): message : candidate: ‘void MdApi::Level2Callback(Level2QuoteDataT*)’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(20,6): message : no known conversion for argument 1 from ‘const pybind11::dict’ to ‘Level2QuoteDataT*’
-D:\GitHub\tac\include\pybind11\pybind11.h(2076,33): error : return-statement with a value, in function returning ‘void’ [-fpermissive]
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message : in expansion of macro ‘PYBIND11_OVERLOAD_NAME’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      PYBIND11_OVERLOAD_NAME(PYBIND11_TYPE(ret_type), PYBIND11_TYPE(cname), #fn, fn, __VA_ARGS__)
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      ^~~~~~~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(276,4): message : in expansion of macro ‘PYBIND11_OVERLOAD’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(276,4): message :     PYBIND11_OVERLOAD(void, MdApi, Level2Callback, data);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(276,4): message :     ^~~~~~~~~~~~~~~~~
-D:\GitHub\tac\include\pybind11\pybind11.h(2076,33): error : no matching function for call to ‘PyMdApi::MBLCallback(const pybind11::dict&)’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message : in expansion of macro ‘PYBIND11_OVERLOAD_NAME’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      PYBIND11_OVERLOAD_NAME(PYBIND11_TYPE(ret_type), PYBIND11_TYPE(cname), #fn, fn, __VA_ARGS__)
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      ^~~~~~~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(287,4): message : in expansion of macro ‘PYBIND11_OVERLOAD’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(287,4): message :     PYBIND11_OVERLOAD(void, MdApi, MBLCallback, data);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(287,4): message :     ^~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(33,6): message : candidate: ‘void MdApi::MBLCallback(MBLQuoteDataT*)’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(33,6): message : no known conversion for argument 1 from ‘const pybind11::dict’ to ‘MBLQuoteDataT*’
-D:\GitHub\tac\include\pybind11\pybind11.h(2076,33): error : return-statement with a value, in function returning ‘void’ [-fpermissive]
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message : in expansion of macro ‘PYBIND11_OVERLOAD_NAME’
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      PYBIND11_OVERLOAD_NAME(PYBIND11_TYPE(ret_type), PYBIND11_TYPE(cname), #fn, fn, __VA_ARGS__)
-D:\GitHub\tac\include\pybind11\pybind11.h(2083,5): message :      ^~~~~~~~~~~~~~~~~~~~~~
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(287,4): message : in expansion of macro ‘PYBIND11_OVERLOAD’
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(287,4): message :     PYBIND11_OVERLOAD(void, MdApi, MBLCallback, data);
-D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(287,4): message :     ^~~~~~~~~~~~~~~~~
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(260,1): warning : no return statement in function returning non-void [-Wreturn-type]
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(260,1): warning :  }
+D:\GitHub\tac\vntac\vntacmd\vntacmd.cpp(260,1): warning :  ^
+  Linking objects
+  vntacmd.vcxproj -> D:\GitHub\tac\vntac\vntacmd\bin\x64\Debug\libvntacmd.so

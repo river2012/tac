@@ -1,43 +1,45 @@
-# include "vntacmd.h"
+//偷懒之把cast中的static_assert 给mute掉
+#include "vntacmd.h"
+
 
 
 ///-------------------------------------------------------------------------------------
 ///C++回调函数将数据保存到队列中
 ///-------------------------------------------------------------------------------------
-void MdApi::Level1Callback(Level1QuoteDataT *pData)
+void MdApi::Level1Callback(Level1QuoteDataT *pDataL1)
 {
 	Task task = Task();
 	task.task_name = LEVEL1CALLBACK;
-	if (pData)
+	if (pDataL1)
 	{
 		Level1QuoteDataT *task_data = new Level1QuoteDataT();
-		*task_data = *pData;
+		*task_data = *pDataL1;
 		task.task_data = task_data;
 	}
 	this->task_queue.push(task);
 };
 
-void MdApi::Level2Callback(Level2QuoteDataT *pData)
+void MdApi::Level2Callback(Level2QuoteDataT *pDataL2)
 {
 	Task task = Task();
 	task.task_name = LEVEL2CALLBACK;
-	if (pData)
+	if (pDataL2)
 	{
 		Level2QuoteDataT *task_data = new Level2QuoteDataT();
-		*task_data = *pData;
+		*task_data = *pDataL2;
 		task.task_data = task_data;
 	}
 	this->task_queue.push(task);
 };
 
-void MdApi::MBLCallback(MBLQuoteDataT *pData)
+void MdApi::MBLCallback(MBLQuoteDataT *pDataMBL)
 {
 	Task task = Task();
 	task.task_name = MBLCALLBACK;
-	if (pData)
+	if (pDataMBL)
 	{
 		MBLQuoteDataT *task_data = new MBLQuoteDataT();
-		*task_data = *pData;
+		*task_data = *pDataMBL;
 		task.task_data = task_data;
 	}
 	this->task_queue.push(task);
@@ -73,6 +75,7 @@ void MdApi::processTask()
 				this->processMBLCallback(&task);
 				break;
 			}
+
 			};
 		}
 
@@ -82,8 +85,9 @@ void MdApi::processTask()
 	}
 };
 
+
 void MdApi::processLevel1Callback(Task *task)
-{
+{   
 	gil_scoped_acquire acquire;
 	dict data;
 	if (task->task_data)
@@ -105,6 +109,7 @@ void MdApi::processLevel1Callback(Task *task)
 	}
 	this->onLevel1Callback(data);
 };
+
 
 
 void MdApi::processLevel2Callback(Task *task)
@@ -202,6 +207,8 @@ void MdApi::processMBLCallback(Task *task)
 	this->onMBLCallback(data);
 };
 
+
+
 ///-------------------------------------------------------------------------------------
 ///req:主动函数
 ///-------------------------------------------------------------------------------------
@@ -231,7 +238,7 @@ int MdApi::TacFeedSubscribe(const dict &req)
 	TacFeedInitParam myreq = TacFeedInitParam();
 	memset(&myreq, 0, sizeof(myreq));
 	getPointer(req, "LocalIP", &myreq.LocalIP);
-	getPointer(req, "LoginServerIP",&myreq.LoginServerIP);
+	getPointer(req, "LoginServerIP", &myreq.LoginServerIP);
 	getUint16_t(req, "LoginServerPort", &myreq.LoginServerPort);
 	getPointer(req, "UserName", &myreq.UserName);
 	getPointer(req, "Password", &myreq.Password);
@@ -241,15 +248,16 @@ int MdApi::TacFeedSubscribe(const dict &req)
 	//getTacfeedapiselectmode(req, "ApiSelectMode", myreq.ApiSelectMode);
 	//getTacfeedflag(req, "Flag", myreq.Flag);
 	////int i = this->api->TacFeedSubscribe(&myreq);
-	int i = this->TacFeedSubscribe(&myreq);
+	int i = ::TacFeedSubscribe(&myreq);
+	//int i = 0;
 	return i;
-};
+}
 
 int MdApi::TacFeedRelease()
 {
 	///this->api->TacFeedRelease();
 	this->TacFeedRelease();
-};
+}
 
 
 ///-------------------------------------------------------------------------------------
@@ -262,7 +270,7 @@ class PyMdApi : public MdApi
 	{
 		try
 		{
-			PYBIND11_OVERLOAD(void, MdApi, Level1Callback,data);
+			PYBIND11_OVERLOAD(void, MdApi, onLevel1Callback, data);
 		}
 		catch (const error_already_set &e)
 		{
@@ -273,7 +281,11 @@ class PyMdApi : public MdApi
 	{
 		try
 		{
-			PYBIND11_OVERLOAD(void, MdApi, Level2Callback, data);
+			//Level2QuoteDataT t;
+			//这里写代码给t赋值
+			//strncpy(t.ActionDay, data["ActionDay"].c_str(),9);
+			//t.AskPrice1 = data["AskPrice1"];
+			PYBIND11_OVERLOAD(void, MdApi, onLevel2Callback, data);
 		}
 		catch (const error_already_set &e)
 		{
@@ -284,7 +296,7 @@ class PyMdApi : public MdApi
 	{
 		try
 		{
-			PYBIND11_OVERLOAD(void, MdApi, MBLCallback, data);
+			PYBIND11_OVERLOAD(void, MdApi, onMBLCallback, data);
 		}
 		catch (const error_already_set &e)
 		{
@@ -292,6 +304,8 @@ class PyMdApi : public MdApi
 		}
 	}
 };
+
+
 
 ///-------------------------------------------------------------------------------------
 ///PYBIND11
@@ -305,11 +319,10 @@ PYBIND11_MODULE(vntacmd, m)
 		.def("TacFeedSetCpuAffinity", &MdApi::TacFeedSetCpuAffinity)
 		.def("TacFeedSubscrib", &MdApi::TacFeedSubscribe)
 		.def("TacFeedRelease", &MdApi::TacFeedRelease)
-
-		.def("Level1Callback", &MdApi::Level1Callback)
-		.def("Level2Callback", &MdApi::Level1Callback)
-		.def("MBLCallback", &MdApi::MBLCallback)
+		
+		.def("onLevel1Callback", &MdApi::onLevel1Callback)
+		.def("onLevel2Callback", &MdApi::onLevel1Callback)
+		.def("onMBLCallback", &MdApi::onMBLCallback)
 		;
-		;
-		;
+		;	
 }

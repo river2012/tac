@@ -1,0 +1,1 @@
+g++ -o "/root/projects/vntacmd/bin/x64/Debug/libvntacmd.so" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -shared /root/projects/vntacmd/obj/x64/Debug/main.o /root/projects/vntacmd/obj/x64/Debug/vntacmd.o /root/projects/vntacmd/../../lib/libtacfeedmd.so /root/projects/vntacmd/../../lib/libtactraderapi.so -lpthread -lpython3.6m

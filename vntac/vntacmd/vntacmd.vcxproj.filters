@@ -11,7 +11,7 @@
     <Filter Include="头文件\pybind11">
       <UniqueIdentifier>{e91e8928-b1a6-4f4c-b254-d31a7f31873d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="资源文件">
+    <Filter Include="头文件\资源文件">
       <UniqueIdentifier>{32d77dbe-df96-4972-9026-4db021b224a8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -109,10 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\lib\libtacfeedmd.so">
-      <Filter>资源文件</Filter>
+      <Filter>头文件\资源文件</Filter>
     </Library>
     <Library Include="..\..\lib\libtactraderapi.so">
-      <Filter>资源文件</Filter>
+      <Filter>头文件\资源文件</Filter>
     </Library>
   </ItemGroup>
 </Project>
