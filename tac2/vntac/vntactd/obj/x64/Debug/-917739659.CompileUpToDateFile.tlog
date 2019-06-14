@@ -1,0 +1,33 @@
+D:\GitHub\tac\vntac\vntactd\main.cpp|636912007240000000|/root/projects/vntactd||g++ -c -x c++ /root/projects/vntactd/vntac/vntactd/main.cpp -I /root/projects/vntactd/include -I /usr/include/python3.6m/ -I /root/projects/vntactd/vntac/vntactd -I /root/projects/vntactd/../../include -I /root/projects/vntactd/vntac -I /root/projects/vntactd/include -I /root/projects/vntactd/../../../tac -I "/root/projects/vntactd/C/Users/river/AppData/Local/Microsoft/Linux/HeaderCache/1.0/-917739659/usr/include/c++/4.8.2/bits" -I /root/projects/vntactd/../../include -I /root/projects/vntactd/vntac -g2 -gdwarf-2 -o "/root/projects/vntactd/obj/x64/Debug/main.o" -Wall -W"no-delete-incomplete" -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O0 -fno-strict-aliasing -fno-omit-frame-pointer -fpic -fthreadsafe-statics -fexceptions -frtti -std=c++17
+D:\GitHub\tac\vntac\vntactd\vntactd.cpp|636943478460000000|/root/projects/vntactd||g++ -c -x c++ /root/projects/vntactd/vntac/vntactd/vntactd.cpp -I /root/projects/vntactd/vntac/vntactd -I /root/projects/vntactd/vntac -I /root/projects/vntactd/../../include -I /root/projects/vntactd/../../../tac -I /root/projects/vntactd/include -I /usr/include/python3.6m/ -I /root/projects/vntactd/vntac/vntactd -I /root/projects/vntactd/../../include -I /root/projects/vntactd/vntac -I /root/projects/vntactd/include -I /root/projects/vntactd/../../../tac -I "/root/projects/vntactd/C/Users/river/AppData/Local/Microsoft/Linux/HeaderCache/1.0/-917739659/usr/include/c++/4.8.2/bits" -I /root/projects/vntactd/../../include -I /root/projects/vntactd/vntac -g2 -gdwarf-2 -o "/root/projects/vntactd/obj/x64/Debug/vntactd.o" -Wall -W"no-delete-incomplete" -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O0 -fno-strict-aliasing -fno-omit-frame-pointer -fpic -fthreadsafe-statics -fexceptions -frtti -std=c++17
+D:\GitHub\tac\include\tac\tacfeedmd.h|636936202060000000|/root/projects/vntactd|| 
+D:\GitHub\tac\include\tac\TacFtdcTraderApi.h|636916349420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\include\tac\TacFtdcUserApiDataType.h|636911978060000000|/root/projects/vntactd|| 
+D:\GitHub\tac\include\tac\TacFtdcUserApiStruct.h|636911978060000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntac.h|636953604340000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\attr.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\buffer_info.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\cast.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\chrono.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\common.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\complex.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\detail\class.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\detail\common.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\detail\descr.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\detail\init.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\detail\internals.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\detail\typeid.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\eigen.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\embed.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\eval.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\functional.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\iostream.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\numpy.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\operators.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\options.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\pybind11.h|636915242420000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\pytypes.h|636915242440000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\stl.h|636915242440000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\include\pybind11\stl_bind.h|636915242440000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\targetver.h|636890535860000000|/root/projects/vntactd|| 
+D:\GitHub\tac\vntac\vntactd\vntactd.h|636917153400000000|/root/projects/vntactd|| 

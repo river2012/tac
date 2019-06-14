@@ -1,0 +1,1 @@
+g++ -o "/root/projects/vntactd/bin/x64/Debug/libvntactd.so" -Wl,--no-undefined -Wl,-L/root/projects/vntactd -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack -shared /root/projects/vntactd/obj/x64/Debug/main.o /root/projects/vntactd/obj/x64/Debug/vntactd.o /root/projects/vntactd/libtacfeedmd.so /root/projects/vntactd/libtactraderapi.so -lpthread -lpython3.6m -ltacfeedmd -ltactraderapi

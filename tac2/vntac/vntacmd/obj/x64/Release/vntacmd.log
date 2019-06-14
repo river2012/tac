@@ -1,0 +1,11 @@
+﻿  Validating sources
+  Copying sources remotely to '47.91.228.44'
+  Validating architecture
+  Starting remote build
+  Compiling sources:
+  main.cpp
+  vntacmd.cpp
+D:\GitHub\tac\vntac\vntacmd\vntacmd.h(6,10): error : vntac.h: No such file or directory
+D:\GitHub\tac\vntac\vntacmd\vntacmd.h(6,10): error :  #include "vntac.h"
+D:\GitHub\tac\vntac\vntacmd\vntacmd.h(6,10): error :           ^~~~~~~~~
+D:\GitHub\tac\vntac\vntacmd\vntacmd.h(6,10): error : compilation terminated.

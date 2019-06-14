@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3eddca07-d4b9-49b6-968a-8d7f75f0e0cf}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>vntactd</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>D:\GitHub\tac;C:\Users\river\AppData\Local\Microsoft\Linux\HeaderCache\1.0\-917739659\usr\include\c++\4.8.2\bits;D:\GitHub\tac\include;D:\GitHub\tac\vntac</IncludePath>
+    <LibraryPath>D:\GitHub\tac\vntac;D:\GitHub\tac;$(LibraryPath)</LibraryPath>
+    <AdditionalSourcesToCopyMapping>$(SolutionDir)vntac.h:=vntac.h;D:\GitHub\tac\include=/tmp/include/;libtactraderapi.so=libtactraderapi.so;libtacfeedmd.so=libtacfeedmd.so;$(AdditionalSourcesToCopyMapping)</AdditionalSourcesToCopyMapping>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="vntactd.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\tac\vntac\vntactd;D:\GitHub\tac\vntac;D:\GitHub\tac\include;D:\GitHub\tac;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\tac\tacfeedmd.h" />
+    <ClInclude Include="..\..\include\tac\TacFtdcTraderApi.h" />
+    <ClInclude Include="..\..\include\tac\TacFtdcUserApiDataType.h" />
+    <ClInclude Include="..\..\include\tac\TacFtdcUserApiStruct.h" />
+    <ClInclude Include="..\vntac.h" />
+    <ClInclude Include="include\pybind11\attr.h" />
+    <ClInclude Include="include\pybind11\buffer_info.h" />
+    <ClInclude Include="include\pybind11\cast.h" />
+    <ClInclude Include="include\pybind11\chrono.h" />
+    <ClInclude Include="include\pybind11\common.h" />
+    <ClInclude Include="include\pybind11\complex.h" />
+    <ClInclude Include="include\pybind11\detail\class.h" />
+    <ClInclude Include="include\pybind11\detail\common.h" />
+    <ClInclude Include="include\pybind11\detail\descr.h" />
+    <ClInclude Include="include\pybind11\detail\init.h" />
+    <ClInclude Include="include\pybind11\detail\internals.h" />
+    <ClInclude Include="include\pybind11\detail\typeid.h" />
+    <ClInclude Include="include\pybind11\eigen.h" />
+    <ClInclude Include="include\pybind11\embed.h" />
+    <ClInclude Include="include\pybind11\eval.h" />
+    <ClInclude Include="include\pybind11\functional.h" />
+    <ClInclude Include="include\pybind11\iostream.h" />
+    <ClInclude Include="include\pybind11\numpy.h" />
+    <ClInclude Include="include\pybind11\operators.h" />
+    <ClInclude Include="include\pybind11\options.h" />
+    <ClInclude Include="include\pybind11\pybind11.h" />
+    <ClInclude Include="include\pybind11\pytypes.h" />
+    <ClInclude Include="include\pybind11\stl.h" />
+    <ClInclude Include="include\pybind11\stl_bind.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="vntactd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libtacfeedmd.so" />
+    <Library Include="libtactraderapi.so" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>include;/usr/include/python3.6m/;D:\GitHub\tac\vntac\vntactd;D:\GitHub\tac\include;D:\GitHub\tac\vntac;include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+      <CppAdditionalWarning>no-delete-incomplete;%(CppAdditionalWarning)</CppAdditionalWarning>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>pthread;python3.6m;tacfeedmd;tactraderapi</LibraryDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\GitHub\tac\vntac;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
