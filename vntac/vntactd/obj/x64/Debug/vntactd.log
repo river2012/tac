@@ -3,9 +3,5 @@
   Validating architecture
   Starting remote build
   Compiling sources:
-  main.cpp
-  vntactd.cpp
-D:\GitHub\tac\vntac\vntactd\..\..\include\pybind11\detail\common.h(680,83): warning : inline declaration of ‘void pybind11::pybind11_fail(const string&)’ follows declaration with attribute ‘noinline’ [-Wattributes]
-D:\GitHub\tac\vntac\vntactd\..\..\include\pybind11\detail\common.h(679,44): message : previous definition of ‘void pybind11::pybind11_fail(const char*)’ was here
   Linking objects
   vntactd.vcxproj -> D:\GitHub\tac\vntac\vntactd\bin\x64\Debug\libvntactd.so

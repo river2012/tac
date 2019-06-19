@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="vntactd.cpp" />
+    <ClCompile Include="libvntactd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="头文件">

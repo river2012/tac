@@ -82,7 +82,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="vntactd.cpp">
+    <ClCompile Include="libvntactd.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\tac\vntac\vntactd;D:\GitHub\tac\vntac;D:\GitHub\tac\include;D:\GitHub\tac;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemGroup>

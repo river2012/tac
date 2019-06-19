@@ -82,7 +82,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="vntacmd.cpp" />
+    <ClCompile Include="libvntacmd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\pybind11\attr.h" />
