@@ -76,9 +76,12 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\GitHub\tac;C:\Users\river\AppData\Local\Microsoft\Linux\HeaderCache\1.0\-917739659\usr\include\c++\4.8.2\bits;D:\GitHub\tac\include;D:\GitHub\tac\vntac</IncludePath>
-    <LibraryPath>D:\GitHub\tac\vntac;D:\GitHub\tac;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\GitHub\tac;D:\GitHub\tac\include;D:\GitHub\tac\vntac</IncludePath>
+    <LibraryPath>C:\Users\river\AppData\Local\Microsoft\Linux\HeaderCache\1.0\-917739659\usr\include\c++\4.8.2\bits;D:\GitHub\tac\vntac;D:\GitHub\tac;$(LibraryPath)</LibraryPath>
     <AdditionalSourcesToCopyMapping>$(SolutionDir)vntac.h:=vntac.h;D:\GitHub\tac\include=/tmp/include/;libtactraderapi.so=libtactraderapi.so;libtacfeedmd.so=libtacfeedmd.so;$(AdditionalSourcesToCopyMapping)</AdditionalSourcesToCopyMapping>
+    <RemoteCCompileToolExe>/opt/rh/devtoolset-8/root/usr/bin/g++</RemoteCCompileToolExe>
+    <RemoteCppCompileToolExe>/opt/rh/devtoolset-8/root/usr/bin/g++</RemoteCppCompileToolExe>
+    <RemoteLdToolExe>/opt/rh/devtoolset-8/root/usr/bin/g++</RemoteLdToolExe>
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -125,13 +128,17 @@
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>include;/usr/include/python3.6m/;D:\GitHub\tac\vntac\vntactd;D:\GitHub\tac\include;D:\GitHub\tac\vntac;include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <CppLanguageStandard>c++17</CppLanguageStandard>
+      <AdditionalIncludeDirectories>/usr/include/c++/4.8.5/bits/;/root/anaconda3/include/python3.7m;/root/anaconda3/include/;/root/anaconda3/bin/;/root/anaconda3/lib/;D:\GitHub\tac\vntac\vntactd;D:\GitHub\tac\include;D:\GitHub\tac\vntac;include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
       <CppAdditionalWarning>no-delete-incomplete;%(CppAdditionalWarning)</CppAdditionalWarning>
+      <CLanguageStandard>c11</CLanguageStandard>
+      <AdditionalOptions>
+      </AdditionalOptions>
     </ClCompile>
     <Link>
-      <LibraryDependencies>pthread;python3.6m;tacfeedmd;tactraderapi</LibraryDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <LibraryDependencies>pthread;tacfeedmd;tactraderapi;python3.7m</LibraryDependencies>
+      <AdditionalLibraryDirectories>/root/anaconda3/lib/;$(ProjectDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

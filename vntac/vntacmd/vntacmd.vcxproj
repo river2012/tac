@@ -79,6 +79,9 @@
     <IncludePath>D:\GitHub\tac\include;D:\GitHub\tac\vntac;D:\GitHub\tac\vntac\vntacmd;D:\GitHub\tac\include\pybind11\detail;D:\GitHub\tac\include\pybind11;D:\GitHub\tac\include\tac;$(IncludePath)</IncludePath>
     <LibraryPath>D:\GitHub\tac\include;D:\GitHub\tac\vntac;D:\GitHub\tac\vntac\vntacmd;D:\GitHub\tac\include\pybind11\detail;D:\GitHub\tac\include\pybind11;D:\GitHub\tac\include\tac;$(IncludePath)</LibraryPath>
     <AdditionalSourcesToCopyMapping>$(SolutionDir)vntac.h:=vntac.h;D:\GitHub\tac\include=/tmp/include/;libtactraderapi.so=libtactraderapi.so;libtacfeedmd.so=libtacfeedmd.so;$(AdditionalSourcesToCopyMapping)</AdditionalSourcesToCopyMapping>
+    <RemoteCCompileToolExe>/opt/rh/devtoolset-8/root/usr/bin/g++</RemoteCCompileToolExe>
+    <RemoteCppCompileToolExe>/opt/rh/devtoolset-8/root/usr/bin/g++</RemoteCppCompileToolExe>
+    <RemoteLdToolExe>/opt/rh/devtoolset-8/root/usr/bin/g++</RemoteLdToolExe>
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -122,10 +125,11 @@
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>include;/usr/include/python3.6m/;D:\GitHub\tac\vntac\vntactd;D:\GitHub\tac\include;D:\GitHub\tac\vntac;include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;/root/anaconda3/include/python3.7m;D:\GitHub\tac\vntac\vntactd;D:\GitHub\tac\include;D:\GitHub\tac\vntac;include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <LibraryDependencies>pthread;python3.6m</LibraryDependencies>
+      <LibraryDependencies>pthread;python3.7m</LibraryDependencies>
+      <AdditionalLibraryDirectories>/root/anaconda3/lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

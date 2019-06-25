@@ -3,5 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
     <RemoteDebugTarget>-917739659;47.91.228.44 (username=, port=22, authentication=Password)</RemoteDebugTarget>
+    <DebuggerType>NativeOnly</DebuggerType>
   </PropertyGroup>
 </Project>
