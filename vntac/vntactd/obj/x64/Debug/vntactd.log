@@ -1,7 +1,2 @@
-﻿  Validating sources
-  Copying sources remotely to '47.91.228.44'
-  Validating architecture
-  Starting remote build
-  Compiling sources:
-  Linking objects
-  vntactd.vcxproj -> D:\GitHub\tac\vntac\vntactd\bin\x64\Debug\libvntactd.so
+﻿  Cleaning remote project directory
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Application Type\Linux\1.0\Linux.targets(210,6): error : Could not connect to the remote system. Please verify your connection settings, and that your machine is on the network and reachable.

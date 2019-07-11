@@ -14,15 +14,17 @@ using namespace pybind11;
 #define ONFRONTCONNECTED 0
 #define ONFRONTDISCONNECTED 1
 #define ONRSPERROR 2
-#define ONRSPUSERLOGIN 3
-#define ONRSPUSERLOGOUT 4
-#define ONRSPORDERINSERT 5
-#define ONRSPORDERACTION 6
-#define ONRTNORDER 7
-#define ONRTNTRADE 8
-#define ONRSPQRYINSTRUMENT 9
-#define ONRSPQRYACCOUNT 10
-#define ONRSPQRYPOSITION 11
+#define ONRSPAUTHENTICATE 3      //新增v14
+#define ONRSPUSERLOGIN 4
+#define ONRSPUSERLOGOUT 5
+#define ONRSPORDERINSERT 6
+#define ONRSPORDERACTION 7
+#define ONRTNORDER 8
+#define ONRTNTRADE 9
+#define ONRSPQRYINSTRUMENT 10
+#define ONRSPQRYACCOUNT 11
+#define ONRSPQRYPOSITION 12
+
 
 ///------------------------------------------------------------------------------------------
 ///C++ SPI的回调函数方法实现
@@ -59,6 +61,9 @@ public:
 
 	///错误应答
 	virtual void OnRspError(CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+
+	///App认证应答   //新增v14
+	virtual void OnRspAuthenticate(CTacFtdcRspAuthenticateField *pRspAuthenticate, CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
 
 	///用户登录应答
 	virtual void OnRspUserLogin(CTacFtdcRspUserLoginField *pRspUserLogin, CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
@@ -98,6 +103,8 @@ public:
 
 	void processRspError(Task *task);
 
+	void processRspAuthenticate(Task *task);   //新增v14
+
 	void processRspUserLogin(Task *task);
 
 	void processRspUserLogout(Task *task);
@@ -128,6 +135,8 @@ public:
 	virtual void onFrontDisconnected(int reqid) {};
 
 	virtual void onRspError(const dict &error, int reqid, bool last) {};
+
+	virtual void onRspAuthenticate(const dict &data, const dict &error, int reqid, bool last) {};   //新增v14
 
 	virtual void onRspUserLogin(const dict &data, const dict &error, int reqid, bool last) {};
 
@@ -162,7 +171,7 @@ public:
 
 	int exit();                                 //river: added exit
 
-	void registerFront(string pszFrontAddress);
+	void registerFront(string pszFrontAddress); 
 
 	//void RegisterSpi(CTacFtdcTraderSpi *pSpi); //river: not use
 
@@ -176,7 +185,10 @@ public:
 
 	string getTradingDay();
 
-	uint64_t getNextOrderRef();
+	//uint64_t getNextOrderRef();  //v14删除部分
+
+	//App认证请求    v14新增
+	int reqAuthenticate(const dict &req, int reqid);
 
 	///用户登录请求
 	int reqUserLogin(const dict &req, int reqid);
