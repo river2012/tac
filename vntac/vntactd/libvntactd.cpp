@@ -35,6 +35,29 @@ void TdApi::OnRspError(CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsL
 	this->task_queue.push(task);
 };
 
+
+//v14 River
+void TdApi::OnRspAuthenticate(CTacFtdcRspAuthenticateField *pRspAuthenticate, CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
+{
+	Task task = Task();
+	task.task_name = ONRSPAUTHENTICATE;
+	if (pRspAuthenticate)
+	{
+		CTacFtdcRspAuthenticateField *task_data = new CTacFtdcRspAuthenticateField();
+		*task_data = *pRspAuthenticate;
+		task.task_data = task_data;
+	}
+	if (pRspInfo)
+	{
+		CTacFtdcRspInfoField *task_error = new CTacFtdcRspInfoField();
+		*task_error = *pRspInfo;
+		task.task_error = task_error;
+	}
+	task.task_id = nRequestID;
+	task.task_last = bIsLast;
+	this->task_queue.push(task);
+};
+
 void TdApi::OnRspUserLogin(CTacFtdcRspUserLoginField *pRspUserLogin, CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
 {
 	Task task = Task();
@@ -325,6 +348,28 @@ void TdApi::processRspError(Task *task)
 		delete task->task_error;
 	}
 	this->onRspError(error, task->task_id, task->task_last);
+};
+
+//v14
+void TdApi::processRspAuthenticate(Task *task)
+{
+	gil_scoped_acquire acquire;
+	dict data;
+	if (task->task_data)
+	{
+		CTacFtdcRspAuthenticateField *task_data = (CTacFtdcRspAuthenticateField*)task->task_data;
+		data["AppID"] = toUtf(task_data->AppID);
+		delete task->task_data;
+	}
+	dict error;
+	if (task->task_error)
+	{
+		CTacFtdcRspInfoField *task_error = (CTacFtdcRspInfoField*)task->task_error;
+		error["ErrorID"] = task_error->ErrorID;
+		error["ErrorMsg"] = toUtf(task_error->ErrorMsg);
+		delete task->task_error;
+	}
+	this->onRspAuthenticate(data, error, task->task_id, task->task_last);
 };
 
 void TdApi::processRspUserLogin(Task *task)
@@ -618,6 +663,18 @@ void TdApi::registerFront(string pszFrontAddress)
 {
 	this->api->RegisterFront((char*)pszFrontAddress.c_str());
 };
+
+//v14
+int TdApi::reqAuthenticate(const dict &req, int reqid)
+{
+	CTacFtdcAuthenticateField myreq = CTacFtdcAuthenticateField();
+	memset(&myreq, 0, sizeof(myreq));
+	getString(req, "AppID", myreq.AppID);
+	getString(req, "AuthCode", myreq.AuthCode);
+	int i = this->api->ReqAuthenticate(&myreq, reqid);
+	return i;
+};
+
 int TdApi::reqUserLogin(const dict &req, int reqid)
 {
 	CTacFtdcUserLoginField myreq = CTacFtdcUserLoginField();
@@ -733,6 +790,19 @@ class PyTdApi : public TdApi
 		try
 		{
 			PYBIND11_OVERLOAD(void, TdApi, onRspError, error, reqid, last);
+		}
+		catch (const error_already_set &e)
+		{
+			cout << e.what() << endl;
+		}
+	};
+
+	//v14
+	void onRspAuthenticate(const dict &data, const dict &error, int reqid, bool last) override
+	{
+		try
+		{
+			PYBIND11_OVERLOAD(void, TdApi, onRspAuthenticate, data, error, reqid, last);
 		}
 		catch (const error_already_set &e)
 		{
@@ -867,6 +937,7 @@ PYBIND11_MODULE(libvntactd, m)
 		.def("getTradingDay", &TdApi::getTradingDay)
 		.def("registerFront", &TdApi::registerFront)
 		
+		.def("reqAuthenticate", &TdApi::reqAuthenticate)  //v14
 		.def("reqUserLogin", &TdApi::reqUserLogin)
 		.def("reqUserLogout", &TdApi::reqUserLogout)
 		.def("reqOrderInsert", &TdApi::reqOrderInsert)
@@ -878,6 +949,7 @@ PYBIND11_MODULE(libvntactd, m)
 		.def("onFrontConnected", &TdApi::onFrontConnected)
 		.def("onFrontDisconnected", &TdApi::onFrontDisconnected)
 		.def("onRspError", &TdApi::onRspError)
+		.def("onRspAuthenticate", &TdApi::onRspAuthenticate)  //v14
 		.def("onRspUserLogin", &TdApi::onRspUserLogin)
 		.def("onRspUserLogout", &TdApi::onRspUserLogout)
 		.def("onRspOrderInsert", &TdApi::onRspOrderInsert)

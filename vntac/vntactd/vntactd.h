@@ -8,13 +8,14 @@
 #include "tac/TacFtdcTraderApi.h"
 
 
+
 using namespace pybind11;
 
 //常量
 #define ONFRONTCONNECTED 0
 #define ONFRONTDISCONNECTED 1
 #define ONRSPERROR 2
-#define ONRSPAUTHENTICATE 3      //新增v14
+#define ONRSPAUTHENTICATE 3       //新增v14
 #define ONRSPUSERLOGIN 4
 #define ONRSPUSERLOGOUT 5
 #define ONRSPORDERINSERT 6
@@ -63,7 +64,7 @@ public:
 	virtual void OnRspError(CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///App认证应答   //新增v14
-	virtual void OnRspAuthenticate(CTacFtdcRspAuthenticateField *pRspAuthenticate, CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+	virtual void OnRspAuthenticate(CTacFtdcRspAuthenticateField *pRspAuthenticate, CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///用户登录应答
 	virtual void OnRspUserLogin(CTacFtdcRspUserLoginField *pRspUserLogin, CTacFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
