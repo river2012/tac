@@ -937,7 +937,7 @@ PYBIND11_MODULE(libvntactd, m)
 		.def("getTradingDay", &TdApi::getTradingDay)
 		.def("registerFront", &TdApi::registerFront)
 		
-		.def("reqAuthenticate", &TdApi::reqAuthenticate)  //v14
+		.def("reqAuthenticate", &TdApi::reqAuthenticate)  
 		.def("reqUserLogin", &TdApi::reqUserLogin)
 		.def("reqUserLogout", &TdApi::reqUserLogout)
 		.def("reqOrderInsert", &TdApi::reqOrderInsert)
@@ -949,7 +949,7 @@ PYBIND11_MODULE(libvntactd, m)
 		.def("onFrontConnected", &TdApi::onFrontConnected)
 		.def("onFrontDisconnected", &TdApi::onFrontDisconnected)
 		.def("onRspError", &TdApi::onRspError)
-		.def("onRspAuthenticate", &TdApi::onRspAuthenticate)  //v14
+		.def("onRspAuthenticate", &TdApi::onRspAuthenticate) 
 		.def("onRspUserLogin", &TdApi::onRspUserLogin)
 		.def("onRspUserLogout", &TdApi::onRspUserLogout)
 		.def("onRspOrderInsert", &TdApi::onRspOrderInsert)

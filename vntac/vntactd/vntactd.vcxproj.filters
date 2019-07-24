@@ -37,9 +37,6 @@
     <ClInclude Include="..\vntac.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="vntactd.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="include\pybind11\attr.h">
       <Filter>头文件\pybind11</Filter>
     </ClInclude>
@@ -111,6 +108,9 @@
     </ClInclude>
     <ClInclude Include="include\pybind11\detail\typeid.h">
       <Filter>头文件\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="vntactd.h">
+      <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
